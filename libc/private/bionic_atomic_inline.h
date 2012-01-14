@@ -74,6 +74,9 @@ extern "C" {
 # define _ANDROID_MEMBAR_FULL_SMP() \
     do { __asm__ __volatile__ ("mfence" ::: "memory"); } while (0)
 
+#elif defined(__mips__) 
+# define _ANDROID_MEMBAR_FULL_SMP() \
+    do { __asm__ __volatile__ ("sync" ::: "memory"); } while (0)
 #else
 /*
  * Implementation not defined for this platform.  Hopefully we're building

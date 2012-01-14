@@ -12,6 +12,10 @@
 #ifndef _ASM_PAGE_H
 #define _ASM_PAGE_H
 
+#ifdef PAGE_SIZE_16KB
+#define PAGE_SHIFT 14
+#endif
+
 #ifndef PAGE_SHIFT
 #define PAGE_SHIFT 12
 #endif
